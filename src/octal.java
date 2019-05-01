@@ -7,9 +7,13 @@ public class octal {
         while(0 < userNumber){
             int remainder = getRemainder(userNumber);
             System.out.println(remainder);
-            userNumber = userNumber/10;
+            userNumber = getQuotient(userNumber);
             System.out.println(userNumber);
         }
+    }
+
+    private static int getQuotient(int userNumber) {
+        return userNumber/10;
     }
 
     private static int getRemainder(int userNumber) {
