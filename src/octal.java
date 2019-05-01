@@ -3,12 +3,12 @@ public class octal {
     public static void main(String[] args){
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter Your Number:- ");
-        int Number = myObj.nextInt();
-        while(0 < Number){
-            int digit = Number%10;
+        int userNumber = myObj.nextInt();
+        while(0 < userNumber){
+            int digit = userNumber%10;
             System.out.println(digit);
-            Number = Number/10;
-            System.out.println(Number);
+            userNumber = userNumber/10;
+            System.out.println(userNumber);
         }
     }
 }
