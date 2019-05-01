@@ -1,9 +1,6 @@
-import java.util.Scanner;
 public class octal {
     public static void main(String[] args){
-        Scanner myObj = new Scanner(System.in);
-        System.out.print("Enter Your Number:- ");
-        int userNumber = myObj.nextInt();
+        int userNumber = Integer.parseInt(args[0]);
         while(0 < userNumber){
             int remainder = getRemainder(userNumber);
             System.out.println(remainder);
