@@ -5,8 +5,8 @@ public class octal {
         System.out.print("Enter Your Number:- ");
         int userNumber = myObj.nextInt();
         while(0 < userNumber){
-            int digit = userNumber%10;
-            System.out.println(digit);
+            int remainder = userNumber%10;
+            System.out.println(remainder);
             userNumber = userNumber/10;
             System.out.println(userNumber);
         }
