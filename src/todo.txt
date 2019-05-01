@@ -2,3 +2,5 @@
 2. automate testing of this program
 3 Create a new project.
 4.give it a help arg
+5. diff
+6. shortcut of terminal
