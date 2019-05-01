@@ -10,9 +10,6 @@ public class octal {
             Number = Number/10;
             System.out.println(Number);
         }
-
-
-
     }
 }
 
