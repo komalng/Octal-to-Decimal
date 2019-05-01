@@ -1,2 +1,2 @@
 1. put them in git ignore
-2.
+2. automate testing of this program
