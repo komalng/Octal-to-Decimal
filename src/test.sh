@@ -1,2 +1,3 @@
-java octal.java 10 > actual
+javac octal.java
+java octal 123 > actual
 diff actual expectedOutput
