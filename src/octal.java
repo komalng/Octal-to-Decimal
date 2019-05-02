@@ -1,9 +1,12 @@
 public class octal {
     public static void main(String[] args){
         int userNumber = Integer.parseInt(args[0]);
+        int add_remainder = 0;
         while(0 < userNumber){
             int remainder = getRemainder(userNumber);
             System.out.println(remainder);
+            add_remainder = add_remainder + remainder;
+            System.out.println(add_remainder);
             userNumber = getQuotient(userNumber);
             System.out.println(userNumber);
         }
@@ -17,11 +20,3 @@ public class octal {
         return userNumber%10;
     }
 }
-
-
-
-
-//ctrl shift A => actions
-//ctrl F10 => Running the code
-//ctrl+Alt+S => setting
-// Code snipitts

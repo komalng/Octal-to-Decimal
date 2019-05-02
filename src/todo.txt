@@ -4,3 +4,4 @@
 4.give it a help arg
 5. diff
 6. shortcut of terminal
+7.git prehooks
