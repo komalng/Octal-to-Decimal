@@ -6,10 +6,11 @@ public class octalToDecimal {
         while(0 < userNumber){
             int remainder = getRemainder(userNumber);
             addRemainder = addRemainder + remainder*(int)(StrictMath.pow(8,exponent));
-            System.out.println(addRemainder);
             userNumber = getQuotient(userNumber);
             exponent = exponent + 1;
         }
+        System.out.println(addRemainder);
+
     }
 
     private static int getQuotient(int userNumber) {
