@@ -1,4 +1,4 @@
-public class OctalToDecimalConvertor {
+public class OctalToDecimalConverter {
     public static void main(String[] args){
         int userNumber = Integer.parseInt(args[0]);
         int addRemainder = 0;
