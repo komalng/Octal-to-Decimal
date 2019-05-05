@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class OctalToDecimalConverter {
     public static void main(String[] args){
         String Octal = args[0];
@@ -15,7 +18,17 @@ public class OctalToDecimalConverter {
             exponent = exponent + 1;
         }
         System.out.println(addRemainder);
+    }
 
+    private static List<Integer> getDigits(int number) {
+        List<Integer> num = new ArrayList<>();
+        while(0 < number){
+            int remainder = getRemainder(number);
+            System.out.println(remainder);
+            number = getQuotient(number);
+            num.add(remainder);
+        }
+        return num;
     }
 
     private static boolean isNotOctal(String octal) {
