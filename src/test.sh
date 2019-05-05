@@ -4,3 +4,6 @@ diff actual expectedOutput
 
 java OctalToDecimalConverter 11 > actual
 diff actual expectedOutput1
+
+java OctalToDecimalConverter 01 > actual
+diff actual expectedOutput2
