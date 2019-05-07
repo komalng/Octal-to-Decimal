@@ -21,7 +21,7 @@ public class OctalToDecimalConverter {
 
     private static List<Integer> getDigits(int number) {
         List<Integer> num = new ArrayList<>();
-        while(0 < number){
+        while(0 != number){
             int remainder = getRemainder(number);
             number = getQuotient(number);
             num.add(remainder);
