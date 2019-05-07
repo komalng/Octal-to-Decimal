@@ -11,7 +11,7 @@ public class OctalToDecimalConverter {
         int userNumber = Integer.parseInt(args[0]);
         int addRemainder = 0;
         int exponent = 0;
-        for(int digit:getDigits(userNumber)){
+        for(int digit:getDigits(args[0])){
             addRemainder = addRemainder + digit*(int)(StrictMath.pow(8,exponent));
             exponent = exponent + 1;
 
@@ -19,7 +19,8 @@ public class OctalToDecimalConverter {
         System.out.println(addRemainder);
     }
 
-    private static List<Integer> getDigits(int number) {
+    private static List<Integer> getDigits(String Num) {
+        int number = Integer.parseInt(Num);
         List<Integer> num = new ArrayList<>();
         while(0 != number){
             int remainder = getRemainder(number);
