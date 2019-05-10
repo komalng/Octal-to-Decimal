@@ -8,17 +8,19 @@ public class OctalToDecimalConverter {
         String Octal = args[0];
         if(isNotOctal(Octal)){
             System.out.println("Number is not Octal");
-            return ;
+            return;
         }
-        int userNumber = Integer.parseInt(args[0]);
-        int addRemainder = 0;
-        int exponent = 0;
-        for(int digit:getDigits(args[0])){
-            addRemainder = addRemainder + digit*(int)(StrictMath.pow(8,exponent));
-            exponent = exponent + 1;
+        System.out.println(getDecimal(getDigits(args[0]),getPowerEight(args[0].length())));
 
+    }
+
+    private static int getDecimal(List<Integer> listOfDigits, List<Integer> listOfPowerEight){
+        int decimalNumber = 0;
+
+        for(int i = 0; i < listOfDigits.size();i++){
+            decimalNumber+=listOfDigits.get(i) *listOfPowerEight.get(i);
         }
-        System.out.println(addRemainder);
+        return decimalNumber;
     }
 
     private static List<Integer> getDigits(String Num) {
@@ -31,14 +33,7 @@ public class OctalToDecimalConverter {
         }
         return num;
     }
-    private static int getDecimal(List<Integer> listOfDigits,List<Integer> listOfPowerEight){
-        int decimalNumber = 0;
 
-        for(int i = 0; i < listOfDigits.size();i++){
-            decimalNumber=+listOfDigits.get(i) *listOfPowerEight.get(i);
-        }
-        return decimalNumber;
-    }
 
     private static List<Integer> getPowerEight(int lengthOfArgs) {
         List<Integer> listOfNumbers = new ArrayList<>();
