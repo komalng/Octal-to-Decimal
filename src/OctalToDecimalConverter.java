@@ -31,6 +31,14 @@ public class OctalToDecimalConverter {
         }
         return num;
     }
+    private static int getDecimal(List<Integer> listOfDigits,List<Integer> listOfPowerEight){
+        int decimalNumber = 0;
+
+        for(int i = 0; i < listOfDigits.size();i++){
+            decimalNumber=+listOfDigits.get(i) *listOfPowerEight.get(i);
+        }
+        return decimalNumber;
+    }
 
     private static List<Integer> getPowerEight(int lengthOfArgs) {
         List<Integer> listOfNumbers = new ArrayList<>();
