@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.pow;
+
 public class OctalToDecimalConverter {
     public static void main(String[] args){
         String Octal = args[0];
@@ -28,6 +30,15 @@ public class OctalToDecimalConverter {
             num.add(remainder);
         }
         return num;
+    }
+
+    private static List<Integer> getPowerEight(int lengthOfArgs) {
+        List<Integer> listOfNumbers = new ArrayList<>();
+        int base_number  = 8;
+        for (int power = 0; power < lengthOfArgs; power++) {
+            listOfNumbers.add((int) (pow(base_number, power)));
+        }
+        return listOfNumbers;
     }
 
     private static boolean isNotOctal(String octal) {
