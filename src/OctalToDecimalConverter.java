@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.lang.Math.pow;
 
@@ -23,17 +26,28 @@ public class OctalToDecimalConverter {
         return decimalNumber;
     }
 
-    private static List<Integer> getDigits(String Num) {
-        int number = Integer.parseInt(Num);
-        List<Integer> num = new ArrayList<>();
-        while(0 != number){
-            int remainder = getRemainder(number);
-            number = getQuotient(number);
-            num.add(remainder);
-        }
-        return num;
-    }
 
+    private static List<Integer> getDigits(String Num) {
+        List<String> listOfdigit = new ArrayList<>();
+        if(Num.substring(0,1).equals("-")){
+            listOfdigit.add(Num);
+            List<Integer> newList = listOfdigit.stream()
+                    .map(s -> Integer.parseInt(s))
+                    .collect(Collectors.toList());
+            return newList;
+
+        }
+        else {
+            List<String> listOfdigits = Arrays.asList(Num.split(""));
+            Collections.reverse(listOfdigits);
+            List<Integer> newL = listOfdigits.stream()
+                    .map(s -> Integer.parseInt(s))
+                    .collect(Collectors.toList());
+            return newL;
+        }
+
+
+    }
 
     private static List<Integer> getPowerEight(int lengthOfArgs) {
         List<Integer> listOfNumbers = new ArrayList<>();
@@ -48,11 +62,5 @@ public class OctalToDecimalConverter {
         return octal.contains("8")|| octal.contains("9");
     }
 
-    private static int getQuotient(int userNumber) {
-        return userNumber/10;
-    }
 
-    private static int getRemainder(int userNumber) {
-        return userNumber%10;
-    }
 }
