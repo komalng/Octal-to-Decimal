@@ -18,17 +18,17 @@ public class OctalToDecimalConverter {
 
     }
 
-    private static int getDecimal(List<Integer> digits, List<Integer> powerSeries){
+    private static int getDecimal(List<Integer> a, List<Integer> b){
         int decimalNumber = 0;
 
-        for(int i = 0; i < digits.size();i++){
-            decimalNumber+=digits.get(i) *powerSeries.get(i);
+        for(int i = 0; i < a.size();i++){
+            decimalNumber+=a.get(i) *b.get(i);
         }
         return decimalNumber;
     }
 
 
-    private static List<Integer> getDigits(String num) { // TODO
+    private static List<Integer> getDigits(String num) {
             List<String> listOfdigits = Arrays.asList(num.split(""));
             Collections.reverse(listOfdigits);
             List<Integer> newL = listOfdigits.stream()
