@@ -14,11 +14,11 @@ public class OctalToDecimalConverter {
             System.out.println("Number is not Valid");
             return;
         }
-        System.out.println(getDecimal(getDigits(number), getPowerSeries(number.length(),base)));
+        System.out.println(dotProduct(getDigits(number), getPowerSeries(number.length(),base)));
 
     }
 
-    private static int getDecimal(List<Integer> a, List<Integer> b){
+    private static int dotProduct(List<Integer> a, List<Integer> b){
         int decimalNumber = 0;
 
         for(int i = 0; i < a.size();i++){
