@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import static java.lang.Math.pow;
 
-public class OctalToDecimalConverter {
+public class NumberConverter {
     public static void main(String[] args){
         int base = Integer.parseInt(args[1]);
         String number = args[2];
