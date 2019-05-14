@@ -1,15 +1,15 @@
 javac OctalToDecimalConverter.java
-java OctalToDecimalConverter 123 > actual
+java OctalToDecimalConverter --base 8 123 > actual
 diff actual expectedOutput
 
-java OctalToDecimalConverter 11 > actual
+java OctalToDecimalConverter --base 8 11 > actual
 diff actual expectedOutput1
 
-java OctalToDecimalConverter 01 > actual
+java OctalToDecimalConverter --base 8 01 > actual
 diff actual expectedOutput2
 
-java OctalToDecimalConverter 07 > actual
+java OctalToDecimalConverter --base 8 07 > actual
 diff actual expectedOutput3
 
-java OctalToDecimalConverter -1 > actual
+java OctalToDecimalConverter --base 8 -1 > actual
 diff actual expectedOutput4

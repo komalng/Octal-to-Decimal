@@ -8,12 +8,13 @@ import static java.lang.Math.pow;
 
 public class OctalToDecimalConverter {
     public static void main(String[] args){
-        String Octal = args[0];
+        String base = args[1];
+        String Octal = args[2];
         if(isNotOctal(Octal)){
             System.out.println("Number is not Octal");
             return;
         }
-        System.out.println(getDecimal(getDigits(args[0]),getPowerEight(args[0].length())));
+        System.out.println(getDecimal(getDigits(args[2]),getPowerEight(args[2].length())));
 
     }
 
