@@ -10,8 +10,8 @@ public class OctalToDecimalConverter {
     public static void main(String[] args){
         String base = args[1];
         String number = args[2];
-        if(isNotContainingBaseNumber(number)){
-            System.out.println("Number is not Octal");
+        if(isNotContainingBaseNumber(number,base)){
+            System.out.println("Number is not Valid");
             return;
         }
         System.out.println(getDecimal(getDigits(args[2]),getPowerEight(args[2].length())));
@@ -59,10 +59,14 @@ public class OctalToDecimalConverter {
         return listOfNumbers;
     }
 
-    private static boolean isNotContainingBaseNumber(String octal) {
-        return octal.contains("8")|| octal.contains("9");
+    private static boolean isNotContainingBaseNumber(String digits,String baseNumber) {
+        int baseConvert = Integer.parseInt(baseNumber);
+        for(int digit:getDigits(digits)){
+            if(digit > baseConvert){
+                return true;
+            }
+        }
+        return false;
     }
-
-
 
 }
