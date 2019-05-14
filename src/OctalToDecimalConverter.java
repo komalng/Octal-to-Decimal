@@ -14,7 +14,7 @@ public class OctalToDecimalConverter {
             System.out.println("Number is not Valid");
             return;
         }
-        System.out.println(getDecimal(getDigits(args[2]),getPowerEight(args[2].length())));
+        System.out.println(getDecimal(getDigits(args[2]), getPowerSeries(args[2].length(),args[1])));
 
     }
 
@@ -50,11 +50,11 @@ public class OctalToDecimalConverter {
 
     }
 
-    private static List<Integer> getPowerEight(int lengthOfArgs) {
+    private static List<Integer> getPowerSeries(int numberOfTerms, String baseNumber) {
         List<Integer> listOfNumbers = new ArrayList<>();
-        int base_number  = 8;
-        for (int power = 0; power < lengthOfArgs; power++) {
-            listOfNumbers.add((int) (pow(base_number, power)));
+        int base  = Integer.parseInt(baseNumber);
+        for (int power = 0; power < numberOfTerms; power++) {
+            listOfNumbers.add((int) (pow(base, power)));
         }
         return listOfNumbers;
     }
