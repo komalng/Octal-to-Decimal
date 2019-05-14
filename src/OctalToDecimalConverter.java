@@ -9,8 +9,8 @@ import static java.lang.Math.pow;
 public class OctalToDecimalConverter {
     public static void main(String[] args){
         String base = args[1];
-        String Octal = args[2];
-        if(isNotOctal(Octal)){
+        String octal = args[2];
+        if(isNotOctal(octal)){
             System.out.println("Number is not Octal");
             return;
         }
