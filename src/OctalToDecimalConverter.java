@@ -10,7 +10,7 @@ public class OctalToDecimalConverter {
     public static void main(String[] args){
         String base = args[1];
         String number = args[2];
-        if(isNotOctal(number)){
+        if(isNotContainingBaseNumber(number)){
             System.out.println("Number is not Octal");
             return;
         }
@@ -59,9 +59,10 @@ public class OctalToDecimalConverter {
         return listOfNumbers;
     }
 
-    private static boolean isNotOctal(String octal) {
+    private static boolean isNotContainingBaseNumber(String octal) {
         return octal.contains("8")|| octal.contains("9");
     }
+
 
 
 }
