@@ -14,15 +14,15 @@ public class OctalToDecimalConverter {
             System.out.println("Number is not Valid");
             return;
         }
-        System.out.println(getDecimal(getDigits(args[2]), getPowerSeries(args[2].length(),base)));
+        System.out.println(getDecimal(getDigits(number), getPowerSeries(number.length(),base)));
 
     }
 
-    private static int getDecimal(List<Integer> listOfDigits, List<Integer> listOfPowerEight){
+    private static int getDecimal(List<Integer> digits, List<Integer> powerSeries){
         int decimalNumber = 0;
 
-        for(int i = 0; i < listOfDigits.size();i++){
-            decimalNumber+=listOfDigits.get(i) *listOfPowerEight.get(i);
+        for(int i = 0; i < digits.size();i++){
+            decimalNumber+=digits.get(i) *powerSeries.get(i);
         }
         return decimalNumber;
     }
