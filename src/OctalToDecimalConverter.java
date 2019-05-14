@@ -10,7 +10,7 @@ public class OctalToDecimalConverter {
     public static void main(String[] args){
         int base = Integer.parseInt(args[1]);
         String number = args[2];
-        if(isNotContainingBaseNumber(number, args[1])){
+        if(isNotContainingBaseNumber(number, base)){
             System.out.println("Number is not Valid");
             return;
         }
@@ -28,25 +28,13 @@ public class OctalToDecimalConverter {
     }
 
 
-    private static List<Integer> getDigits(String Num) {
-        List<String> listOfdigit = new ArrayList<>();
-        if(Num.substring(0,1).equals("-")){
-            listOfdigit.add(Num);
-            List<Integer> newList = listOfdigit.stream()
-                    .map(s -> Integer.parseInt(s))
-                    .collect(Collectors.toList());
-            return newList;
-
-        }
-        else {
-            List<String> listOfdigits = Arrays.asList(Num.split(""));
+    private static List<Integer> getDigits(String num) { // TODO
+            List<String> listOfdigits = Arrays.asList(num.split(""));
             Collections.reverse(listOfdigits);
             List<Integer> newL = listOfdigits.stream()
                     .map(s -> Integer.parseInt(s))
                     .collect(Collectors.toList());
             return newL;
-        }
-
 
     }
 
@@ -58,10 +46,9 @@ public class OctalToDecimalConverter {
         return listOfNumbers;
     }
 
-    private static boolean isNotContainingBaseNumber(String digits,String baseNumber) {
-        int baseConvert = Integer.parseInt(baseNumber);
+    private static boolean isNotContainingBaseNumber(String digits,int baseNumber) {
         for(int digit:getDigits(digits)){
-            if(digit > baseConvert){
+            if(digit > baseNumber){
                 return true;
             }
         }
