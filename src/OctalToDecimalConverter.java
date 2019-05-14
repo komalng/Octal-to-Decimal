@@ -8,13 +8,13 @@ import static java.lang.Math.pow;
 
 public class OctalToDecimalConverter {
     public static void main(String[] args){
-        String base = args[1];
+        int base = Integer.parseInt(args[1]);
         String number = args[2];
-        if(isNotContainingBaseNumber(number,base)){
+        if(isNotContainingBaseNumber(number, args[1])){
             System.out.println("Number is not Valid");
             return;
         }
-        System.out.println(getDecimal(getDigits(args[2]), getPowerSeries(args[2].length(),args[1])));
+        System.out.println(getDecimal(getDigits(args[2]), getPowerSeries(args[2].length(),base)));
 
     }
 
@@ -50,11 +50,10 @@ public class OctalToDecimalConverter {
 
     }
 
-    private static List<Integer> getPowerSeries(int numberOfTerms, String baseNumber) {
+    private static List<Integer> getPowerSeries(int numberOfTerms, int baseNumber) {
         List<Integer> listOfNumbers = new ArrayList<>();
-        int base  = Integer.parseInt(baseNumber);
         for (int power = 0; power < numberOfTerms; power++) {
-            listOfNumbers.add((int) (pow(base, power)));
+            listOfNumbers.add((int) (pow(baseNumber, power)));
         }
         return listOfNumbers;
     }
