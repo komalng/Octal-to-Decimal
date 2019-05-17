@@ -10,6 +10,5 @@ public class Multiplication {
             listOfMultiplyNumbers.add(a.get(i)*b.get(i));
         }
         return listOfMultiplyNumbers;
-
     }
 }

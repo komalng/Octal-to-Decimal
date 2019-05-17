@@ -1,5 +1,7 @@
 import com.komal.converter. *;
 
+import java.util.List;
+
 public class NumberConverter {
     public static void main(String[] args){
         ParseResult parsing = new ParseResult(args);
@@ -9,8 +11,8 @@ public class NumberConverter {
             System.out.println("Number is not Valid");
             return;
         }
-        System.out.println(DotProduct.dotProduct(GetDigits.getDigits(number), PowerSeries.getPowerSeries(number.length(), base)));
-
+        List<Integer> numbe = (Multiplication.getMultiplication(GetDigits.getDigits(number),PowerSeries.getPowerSeries(number.length(),base)));
+        System.out.println(Sum.getSum(numbe));
     }
 
     private static boolean isNotContainingBaseNumber(String digits,int baseNumber) {
