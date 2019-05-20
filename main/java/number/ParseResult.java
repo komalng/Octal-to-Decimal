@@ -1,4 +1,4 @@
-package com.komal.converter;
+package number;
 
 public class ParseResult {
     public int fromBase;

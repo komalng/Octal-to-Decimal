@@ -1,4 +1,4 @@
-import com.komal.converter. *;
+package number;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public class NumberConverter {
             System.out.println("Number is not Valid");
             return;
         }
-        List<Integer> numbe = (Multiplication.getMultiplication(GetDigits.getDigits(number),PowerSeries.getPowerSeries(number.length(),base)));
+        List<Integer> numbe = (Multiplication.getMultiplication(GetDigits.getDigits(number), PowerSeries.getPowerSeries(number.length(),base)));
         System.out.println(Sum.getSum(numbe));
     }
 
